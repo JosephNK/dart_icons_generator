@@ -1,0 +1,9 @@
+targets:
+  $default:
+    builders:
+      dart_icons_generator|icomoon:
+        generate_for:
+          include:
+            - assets/icomoon/selection.json
+        options:
+          font_name: Icomoon

@@ -1,0 +1,19 @@
+#targets:
+#  $default:
+#    builders:
+#      dart_icons_generator|icomoon:
+#        generate_for:
+#          include:
+#            - assets/icomoon/selection.json
+#        options:
+#          font_name: Icomoon
+
+builders:
+  icomoon:
+    target: ":dart_icons_generator"
+    import: 'package:dart_icons_generator/builder_icomoon.dart'
+    builder_factories: ['sourceGenFromOptions']
+    build_extensions: {".json": [".dart"]}
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["source_gen|combining_builder"]
